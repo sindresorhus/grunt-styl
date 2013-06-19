@@ -4,7 +4,8 @@ module.exports = function (grunt) {
 		var Style = require('styl');
 		var options = this.options({
 			whitespace: false,
-			vendors: ['webkit', 'moz', 'ms', 'o']
+			vendors: ['webkit', 'moz', 'ms', 'o'],
+			compress: false
 		});
 		var vendors = options.vendors.map(function (el) {
 			return '-' + el + '-';

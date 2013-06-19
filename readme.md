@@ -93,6 +93,14 @@ Default: `['webkit', 'moz', 'ms', 'o']`
 Vendor prefixes to apply.
 
 
+#### compress
+
+Type `Boolean`
+Default: `false`
+
+Enable output compression
+
+
 ## License
 
 MIT License • © [Sindre Sorhus](http://sindresorhus.com)

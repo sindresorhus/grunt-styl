@@ -3,5 +3,5 @@ button {
   background: -moz-linear-gradient(top, black, white);
   background: -ms-linear-gradient(top, black, white);
   background: -o-linear-gradient(top, black, white);
-  background: linear-gradient(top, black, white)
+  background: linear-gradient(top, black, white);
 }
