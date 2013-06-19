@@ -95,10 +95,10 @@ Vendor prefixes to apply.
 
 #### compress
 
-Type `Boolean`
+Type `Boolean`  
 Default: `false`
 
-Enable output compression
+Output compression.
 
 
 ## License
