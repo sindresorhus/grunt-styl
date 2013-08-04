@@ -100,6 +100,28 @@ Default: `false`
 
 Output compression.
 
+#### configure
+
+Type `Function`  
+Default: `undefined`
+
+Function that manipulates the styl compiler before use. Useful
+for adding on plugins, etc. For example:
+
+    styl: {
+    compile: {
+      options: {
+        whitespace: true,
+        configure: function(styl) {
+          styl.use(stylVariables());
+        }
+      },
+      files: {
+        'public/main.css': ['styl/*.styl']
+      }
+    }
+  },
+
 
 ## License
 
