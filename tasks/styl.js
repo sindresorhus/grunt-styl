@@ -6,15 +6,15 @@ module.exports = function (grunt) {
 			whitespace: false,
 			vendors: ['webkit', 'moz', 'ms', 'o'],
 			compress: false,
-      configure: undefined
+			configure: undefined
 		});
-    var configure = options.configure;
+		var configure = options.configure;
 		var vendors = options.vendors.map(function (el) {
 			return '-' + el + '-';
 		});
 
 		delete options.vendors;
-    delete options.configure;
+		delete options.configure;
 
 		grunt.util.async.forEach(this.files, function (el, next) {
 			var css = el.src.map(function (filePath) {
@@ -22,9 +22,11 @@ module.exports = function (grunt) {
 			}).join(grunt.util.linefeed);
 
 			var style = new Style(css, options);
-      if(configure) {
-        configure(style);
-      }
+
+			if (configure) {
+				configure(style);
+			}
+
 			style.vendors(vendors);
 
 			grunt.file.write(el.dest, style.toString());

@@ -27,10 +27,10 @@ grunt.loadNpmTasks('grunt-styl');
 
 ```css
 #logo {
-  width: 50px;
-  height: @width;
-  absolute: top 100px left 50%;
-  background: linear-gradient(top, black, white);
+	width: 50px;
+	height: @width;
+	absolute: top 100px left 50%;
+	background: linear-gradient(top, black, white);
 }
 ```
 
@@ -38,16 +38,16 @@ Is preprocessed into:
 
 ```css
 #logo {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  background: -o-linear-gradient(top, black, white);
-  background: -ms-linear-gradient(top, black, white);
-  background: -moz-linear-gradient(top, black, white);
-  background: -webkit-linear-gradient(top, black, white);
-  background: linear-gradient(top, black, white)
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	background: -o-linear-gradient(top, black, white);
+	background: -ms-linear-gradient(top, black, white);
+	background: -moz-linear-gradient(top, black, white);
+	background: -webkit-linear-gradient(top, black, white);
+	background: linear-gradient(top, black, white)
 }
 ```
 
@@ -64,7 +64,7 @@ grunt.initConfig({
 	styl: {											// Task
 		dist: {										// Target
 			files: {								// Dictionary of files
-				'dist/main.css': 'app/main.css'		// 'destination': 'source'
+				'dist/main.css': 'app/main.styl'	// 'destination': 'source'
 			}
 		}
 });
@@ -105,22 +105,28 @@ Output compression.
 Type `Function`  
 Default: `undefined`
 
-Function that manipulates the styl compiler before use. Useful
-for adding on plugins, etc. For example:
+Accepts a function that gives you the ability to interact with `styl` before compiling. Useful
+for adding on plugins, etc.
 
-    styl: {
-    compile: {
-      options: {
-        whitespace: true,
-        configure: function(styl) {
-          styl.use(stylVariables());
-        }
-      },
-      files: {
-        'public/main.css': ['styl/*.styl']
-      }
-    }
-  },
+In this example `stylVariables` is a plugin:
+
+```js
+grunt.initConfig({
+	styl: {
+		compile: {
+			options: {
+				whitespace: true,
+				configure: function (styl) {
+					styl.use(stylVariables());
+				}
+			},
+			files: {
+				'dist/main.css': 'app/main.styl'
+			}
+		}
+	}
+});
+```
 
 
 ## License
