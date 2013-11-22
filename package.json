@@ -26,11 +26,12 @@
     "test": "grunt"
   },
   "dependencies": {
-    "styl": "0.2.2"
+    "styl": "~0.2.6",
+    "async": "~0.2.9"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-clean": "0.4.1",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
     "grunt-simple-mocha": "~0.4.0"
   },
   "peerDependencies": {

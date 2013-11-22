@@ -1,7 +1,9 @@
 'use strict';
+var async = require('async');
+var Style = require('styl');
+
 module.exports = function (grunt) {
 	grunt.registerMultiTask('styl', 'Preprocess CSS with Styl', function () {
-		var Style = require('styl');
 		var options = this.options({
 			whitespace: false,
 			vendors: ['webkit', 'moz', 'ms', 'o'],
@@ -16,7 +18,7 @@ module.exports = function (grunt) {
 		delete options.vendors;
 		delete options.configure;
 
-		grunt.util.async.forEach(this.files, function (el, next) {
+		async.each(this.files, function (el, next) {
 			var css = el.src.map(function (filePath) {
 				return grunt.file.read(filePath);
 			}).join(grunt.util.linefeed);
