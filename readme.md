@@ -68,6 +68,7 @@ grunt.initConfig({
 				'dist/main.css': 'app/main.styl'	// 'destination': 'source'
 			}
 		}
+	}
 });
 
 grunt.loadNpmTasks('grunt-styl');
