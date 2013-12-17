@@ -1,8 +1,6 @@
-# grunt-styl [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-styl.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-styl)
+# grunt-styl [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-styl.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-styl) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-[Grunt][grunt] task to preprocess CSS with [Styl](https://github.com/visionmedia/styl)
-
-> Styl is a work in progress CSS processor, spiritual successor of [Stylus](http://learnboost.github.io/stylus/) built on top of [Rework](https://github.com/visionmedia/rework). Styl is basically an opinionated configuration of Rework, and does not aim for feature parity with Stylus.
+> Preprocess CSS with [Styl](https://github.com/visionmedia/styl)
 
 
 ## Getting Started
@@ -134,4 +132,4 @@ grunt.initConfig({
 
 ## License
 
-MIT License • © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
