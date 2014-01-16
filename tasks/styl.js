@@ -23,7 +23,12 @@ module.exports = function (grunt) {
 				return grunt.file.read(filePath);
 			}).join(grunt.util.linefeed);
 
-			var style = new Style(css, options);
+			try {
+				var style = new Style(css, options);
+			} catch (err) {
+				err.message += ' in ' + el.src[0] + '\n';
+				return grunt.warn(err);
+			}
 
 			if (configure) {
 				configure(style);
