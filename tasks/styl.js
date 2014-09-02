@@ -27,6 +27,7 @@ module.exports = function (grunt) {
 			} catch (err) {
 				err.message += ' in ' + src + '\n';
 				grunt.warn(err);
+				next();
 				return;
 			}
 
