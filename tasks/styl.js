@@ -1,6 +1,6 @@
 'use strict';
 var async = require('async');
-var Style = require('styl');
+var Styl = require('styl');
 
 module.exports = function (grunt) {
 	grunt.registerMultiTask('styl', 'Preprocess CSS with Styl', function () {
@@ -19,25 +19,23 @@ module.exports = function (grunt) {
 		delete options.configure;
 
 		async.each(this.files, function (el, next) {
-			var css = el.src.map(function (filePath) {
-				return grunt.file.read(filePath);
-			}).join(grunt.util.linefeed);
+			var styl;
+			var src = el.src[0];
 
 			try {
-				var style = new Style(css, options);
+				styl = new Styl(grunt.file.read(src), options);
 			} catch (err) {
-				err.message += ' in ' + el.src[0] + '\n';
-				return grunt.warn(err);
+				err.message += ' in ' + src + '\n';
+				grunt.warn(err);
+				return;
 			}
 
 			if (configure) {
-				configure(style);
+				configure(styl);
 			}
 
-			style.vendors(vendors);
-
-			grunt.file.write(el.dest, style.toString());
-
+			styl.vendors(vendors);
+			grunt.file.write(el.dest, styl.toString());
 			next();
 		}, this.async());
 	});
