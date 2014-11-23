@@ -1,7 +1,14 @@
 'use strict';
+var reworkNpm = require('rework-npm');
+
 module.exports = function (grunt) {
 	grunt.initConfig({
 		styl: {
+			options: {
+				configure: function (styl) {
+					styl.use(reworkNpm());
+				}
+			},
 			compile: {
 				files: {
 					'test/tmp/preprocessed.css': 'test/fixture/original.css'
