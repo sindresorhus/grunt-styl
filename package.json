@@ -21,7 +21,6 @@
     "test": "grunt"
   },
   "dependencies": {
-    "async": "^0.9.0",
     "styl": "^0.2.7"
   },
   "devDependencies": {

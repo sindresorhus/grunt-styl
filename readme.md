@@ -17,6 +17,9 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 grunt.initConfig({
 	styl: {
 		dist: {
+			options: {
+				use: [require('rework-npm')()]
+			},
 			files: {
 				'dist/main.css': 'app/main.styl'
 			}
@@ -30,53 +33,18 @@ grunt.registerTask('default', ['styl']);
 
 ## Options
 
+### use
+
+Type: `array`  
+
+[Rework plugins.](https://www.npmjs.org/search?q=rework)
+
 ### whitespace
 
 Type: `boolean`  
 Default: `false`
 
 The Sass-style whitespace significant syntax supports nesting and parent selector references.
-
-### vendors
-
-Type: `array`  
-Default: `['webkit', 'moz', 'ms', 'o']`
-
-Vendor prefixes to apply.
-
-### compress
-
-Type `boolean`  
-Default: `false`
-
-Output compression.
-
-### configure
-
-Type `function`  
-
-Accepts a function that gives you the ability to interact with `styl` before compiling. Useful
-for adding on plugins, etc.
-
-In this example `stylVariables` is a plugin:
-
-```js
-grunt.initConfig({
-	styl: {
-		compile: {
-			options: {
-				whitespace: true,
-				configure: function (styl) {
-					styl.use(stylVariables());
-				}
-			},
-			files: {
-				'dist/main.css': 'app/main.styl'
-			}
-		}
-	}
-});
-```
 
 
 ## License

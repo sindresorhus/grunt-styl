@@ -5,9 +5,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		styl: {
 			options: {
-				configure: function (styl) {
-					styl.use(reworkNpm());
-				}
+				use: [reworkNpm()]
 			},
 			compile: {
 				files: {
