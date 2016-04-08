@@ -14,21 +14,11 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "repository": "sindresorhus/grunt-styl",
   "scripts": {
-    "test": "grunt"
-  },
-  "dependencies": {
-    "styl": "^0.2.7"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-simple-mocha": "^0.4.0",
-    "rework-npm": "^1.0.0"
+    "test": "xo && grunt"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -38,5 +28,19 @@
   },
   "files": [
     "tasks"
-  ]
+  ],
+  "dependencies": {
+    "styl": "^0.2.7"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-simple-mocha": "^0.4.0",
+    "rework-npm": "^1.0.0",
+    "xo": "*"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.0"
+  }
 }

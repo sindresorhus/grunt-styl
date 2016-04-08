@@ -2,9 +2,10 @@
 
 > Preprocess CSS with [Styl](https://github.com/visionmedia/styl)
 
+
 ## Install
 
-```sh
+```
 $ npm install --save-dev grunt-styl
 ```
 
@@ -35,13 +36,13 @@ grunt.registerTask('default', ['styl']);
 
 ### use
 
-Type: `array`  
+Type: `array`<br>
 
 [Rework plugins.](https://www.npmjs.org/search?q=rework)
 
 ### whitespace
 
-Type: `boolean`  
+Type: `boolean`<br>
 Default: `false`
 
 The Sass-style whitespace significant syntax supports nesting and parent selector references.
@@ -49,4 +50,4 @@ The Sass-style whitespace significant syntax supports nesting and parent selecto
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
