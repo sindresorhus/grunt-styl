@@ -1,3 +1,9 @@
+# Deprecated
+
+Deprecated as the Styl project is no longer maintained.
+
+---
+
 # grunt-styl [![Build Status](https://travis-ci.org/sindresorhus/grunt-styl.svg?branch=master)](https://travis-ci.org/sindresorhus/grunt-styl)
 
 > Preprocess CSS with [Styl](https://github.com/visionmedia/styl)
